@@ -1,7 +1,0 @@
-{
-  "rewrites": [
-    { "source": "/", "destination": "/api/index" },
-    { "source": "/verify", "destination": "/api/index" },
-    { "source": "/s/:slug", "destination": "/api/index" }
-  ]
-}
